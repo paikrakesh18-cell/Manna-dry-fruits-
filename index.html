@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -5,72 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manna Dry Fruits | Dry Fruits & Spices</title>
     <style>
-        :root {
-            --primary: #8B4513;
-            --secondary: #D2691E;
-            --accent: #2E7D32;
-            --bg: #FFF8F0;
-            --card: #FFFFFF;
-            --text: #2C1E16;
-            --danger: #C62828;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        :root { --primary: #8B4513; --secondary: #D2691E; --accent: #2E7D32; --bg: #FFF8F0; --card: #FFFFFF; --text: #2C1E16; --danger: #C62828; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
         body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-        
-        header { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-        .logo h1 { font-size: 1.5rem; letter-spacing: 0.5px; }
+        header { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+        .logo h1 { font-size: 1.4rem; }
         .logo span { font-size: 0.85rem; color: #FFD59E; display: block; }
         nav { margin-top: 8px; }
-        nav button { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 12px; margin: 3px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
-        nav button:hover, nav button.active { background: #FFD59E; color: var(--primary); }
-
-        .offer-banner { background: linear-gradient(90deg, #D2691E, #B8860B); color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 0.95rem; }
-
+        nav button { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 12px; margin: 3px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        nav button.active { background: #FFD59E; color: var(--primary); }
+        .offer-banner { background: linear-gradient(90deg, #D2691E, #B8860B); color: white; text-align: center; padding: 10px; font-weight: bold; }
         .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
         .section { display: none; }
         .section.active { display: block; }
-
         .filters { margin-bottom: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
         .filters button { padding: 7px 15px; border: 1px solid var(--primary); background: white; color: var(--primary); border-radius: 20px; cursor: pointer; font-weight: 600; }
         .filters button.active { background: var(--primary); color: white; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
-        .card { background: var(--card); border-radius: 10px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #EFE2D3; }
-        .card-img { height: 130px; background: #F5E6D3; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+        .card { background: var(--card); border-radius: 10px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.08); border: 1px solid #EFE2D3; }
+        .card-img { height: 120px; background: #F5E6D3; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
         .card-body { padding: 15px; }
         .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-bottom: 6px; }
         .in-stock { background: #E8F5E9; color: var(--accent); }
         .out-stock { background: #FFEBEE; color: var(--danger); }
         .cat-tag { background: #FFF3E0; color: var(--secondary); margin-left: 5px; }
-        .card h3 { font-size: 1.1rem; margin-bottom: 4px; }
         .price { font-size: 1.2rem; font-weight: bold; color: var(--primary); margin: 8px 0; }
         .btn { width: 100%; padding: 10px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 5px; }
         .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:disabled { background: #CCC; cursor: not-allowed; }
+        .btn-primary:disabled { background: #CCC; }
         .btn-success { background: var(--accent); color: white; }
-        .btn-danger { background: var(--danger); color: white; width: auto; padding: 6px 12px; font-size: 0.85rem; }
-
+        .btn-danger { background: var(--danger); color: white; width: auto; padding: 6px 12px; }
         .box { background: white; padding: 18px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); margin-bottom: 20px; }
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #EEE; font-size: 0.9rem; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #EEE; }
         th { background: #FAF0E6; color: var(--primary); }
         input, select { width: 100%; padding: 9px; margin: 6px 0 14px; border: 1px solid #CCC; border-radius: 6px; }
-
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
-        .stat-card { background: white; padding: 16px; border-radius: 10px; border-left: 5px solid var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-card h4 { font-size: 0.85rem; color: #666; }
-        .stat-card p { font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-top: 5px; }
-        .admin-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; align-items: end; }
-        .inline-input { width: 75px; padding: 5px; margin: 0; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+        .stat-card { background: white; padding: 15px; border-radius: 10px; border-left: 5px solid var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .admin-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; align-items: end; }
+        .inline-input { width: 70px; padding: 5px; margin: 0; }
     </style>
 </head>
 <body>
-
 <header>
-    <div class="logo">
-        <h1>🥜 Manna Dry Fruits</h1>
-        <span>Premium Dry Fruits & Authentic Spices</span>
-    </div>
+    <div class="logo"><h1>🥜 Manna Dry Fruits</h1><span>Premium Dry Fruits & Authentic Spices</span></div>
     <nav>
         <button id="nav-shop" class="active" onclick="showSection('shop', this)">🛍️ Shop</button>
         <button id="nav-cart" onclick="showSection('cart', this)">🛒 Cart (<span id="cart-count">0</span>)</button>
@@ -78,114 +57,56 @@
         <button id="nav-admin" onclick="accessAdmin(this)">🔐 Admin Panel</button>
     </nav>
 </header>
-
-<div class="offer-banner" id="banner-text">
-    🎉 স্পেশাল অফার: ৫০০ টাকার ওপর কেনাকাটায় ১০% ছাড়! দোকানে আসার আগে Pre-Order করে রাখুন।
-</div>
-
+<div class="offer-banner" id="banner-text">🎉 স্পেশাল অফার: ৫০০ টাকার ওপর কেনাকাটায় ১০% ছাড়!</div>
 <div class="container">
-
     <div id="shop" class="section active">
         <div class="filters">
             <button class="active" onclick="filterProducts('All', this)">সব পণ্য (All)</button>
-            <button onclick="filterProducts('Dry Fruits', this)">ড্রাই ফ্রুটস (Dry Fruits)</button>
-            <button onclick="filterProducts('Spices', this)">মসলা (Spices)</button>
+            <button onclick="filterProducts('Dry Fruits', this)">ড্রাই ফ্রুটস</button>
+            <button onclick="filterProducts('Spices', this)">মসলা</button>
         </div>
         <div class="grid" id="product-grid"></div>
     </div>
-
     <div id="cart" class="section">
-        <div class="box">
-            <h2>🛒 আপনার কার্ট (Your Cart)</h2>
-            <div id="cart-items"></div>
-            <h3 style="margin-top: 15px; text-align: right;">মোট বিল: ₹<span id="cart-total">0</span></h3>
-        </div>
-
+        <div class="box"><h2>🛒 আপনার কার্ট</h2><div id="cart-items"></div><h3 style="margin-top:15px;text-align:right;">মোট বিল: ₹<span id="cart-total">0</span></h3></div>
         <div class="box" id="checkout-box" style="display:none;">
-            <h3>অর্ডার কনফার্ম করুন (Checkout / Store Pre-Order)</h3>
-            <label>আপনার নাম:</label>
-            <input type="text" id="cust-name" placeholder="যেমন: Rahul Das">
-            
-            <label>মোবাইল নম্বর:</label>
-            <input type="tel" id="cust-phone" placeholder="যেমন: 9876543210">
-
-            <label>অর্ডারের ধরন বেছে নিন:</label>
+            <h3>অর্ডার কনফার্ম করুন</h3>
+            <label>আপনার নাম:</label><input type="text" id="cust-name" placeholder="যেমন: Rahul Das">
+            <label>মোবাইল নম্বর:</label><input type="tel" id="cust-phone" placeholder="যেমন: 9876543210">
+            <label>অর্ডারের ধরন:</label>
             <select id="order-type" onchange="toggleVisitTime()">
                 <option value="Store Visit Pre-Order">🏪 Store Visit Pre-Order (দোকানে এসে নেব)</option>
-                <option value="Home Delivery">🚚 Home Delivery (বাড়িতে ডেলিভারি)</option>
+                <option value="Home Delivery">🚚 Home Delivery</option>
             </select>
-
-            <div id="visit-time-box">
-                <label>দোকানে কখন আসবেন? (সময় বা বিবরণ লিখুন):</label>
-                <input type="text" id="visit-time" placeholder="যেমন: আজ সন্ধ্যা ৬টায় / আগামীকাল সকালে">
-            </div>
-
-            <div id="address-box" style="display:none;">
-                <label>ডেলিভারির ঠিকানা:</label>
-                <input type="text" id="cust-address" placeholder="সম্পূর্ণ ঠিকানা লিখুন">
-            </div>
-
+            <div id="visit-time-box"><label>দোকানে কখন আসবেন?:</label><input type="text" id="visit-time" placeholder="যেমন: আজ সন্ধ্যা ৬টায়"></div>
+            <div id="address-box" style="display:none;"><label>ডেলিভারির ঠিকানা:</label><input type="text" id="cust-address" placeholder="ঠিকানা লিখুন"></div>
             <button class="btn btn-success" onclick="placeOrder()">✅ অর্ডার কনফার্ম করুন</button>
         </div>
     </div>
-
-    <div id="orders" class="section">
-        <div class="box">
-            <h2>📦 আপনার অর্ডারসমূহ (My Orders)</h2>
-            <p style="font-size:0.85rem; color:#666; margin-bottom:10px;">* অর্ডার করার ৩০ মিনিটের মধ্যে আপনি অর্ডার ক্যানসেল করতে পারবেন।</p>
-            <div id="customer-orders-list"></div>
-        </div>
-    </div>
-
+    <div id="orders" class="section"><div class="box"><h2>📦 আপনার অর্ডারসমূহ</h2><div id="customer-orders-list"></div></div></div>
     <div id="admin" class="section">
         <div class="stats">
-            <div class="stat-card">
-                <h4>আজকের বিক্রি (Today's Sales)</h4>
-                <p>₹<span id="stat-sales">0</span></p>
-            </div>
-            <div class="stat-card">
-                <h4>আজকের অর্ডার</h4>
-                <p><span id="stat-orders">0</span> টি</p>
-            </div>
-            <div class="stat-card">
-                <h4>মোট প্রোডাক্ট</h4>
-                <p><span id="stat-products">0</span> টি</p>
-            </div>
+            <div class="stat-card"><h4>আজকের বিক্রি</h4><p>₹<span id="stat-sales">0</span></p></div>
+            <div class="stat-card"><h4>আজকের অর্ডার</h4><p><span id="stat-orders">0</span> টি</p></div>
+            <div class="stat-card"><h4>মোট প্রোডাক্ট</h4><p><span id="stat-products">0</span> টি</p></div>
         </div>
-
+        <div class="box"><h3>🔑 পাসওয়ার্ড পরিবর্তন</h3><input type="text" id="new-admin-pass" placeholder="নতুন পাসওয়ার্ড"><button class="btn btn-primary" onclick="changeAdminPassword()">Change Password</button></div>
+        <div class="box"><h3>📢 অফার পরিবর্তন</h3><input type="text" id="new-offer-input"><button class="btn btn-primary" onclick="updateOffer()">Update Offer</button></div>
         <div class="box">
-            <h3>🔑 অ্যাডমিন পাসওয়ার্ড পরিবর্তন করুন</h3>
-            <div style="display:flex; gap:10px; flex-wrap: wrap;">
-                <input type="text" id="new-admin-pass" placeholder="নতুন পাসওয়ার্ড লিখুন..." style="flex:1; min-width: 180px;">
-                <button class="btn btn-primary" style="width:170px; height:40px; margin-top:6px;" onclick="changeAdminPassword()">Change Password</button>
-            </div>
-        </div>
-
-        <div class="box">
-            <h3>📢 অফার ব্যানার পরিবর্তন করুন</h3>
-            <div style="display:flex; gap:10px; flex-wrap: wrap;">
-                <input type="text" id="new-offer-input" placeholder="নতুন অফারের লেখা দিন..." style="flex:1; min-width: 180px;">
-                <button class="btn btn-primary" style="width:150px; height:40px; margin-top:6px;" onclick="updateOffer()">Update Offer</button>
-            </div>
-        </div>
-
-        <div class="box">
-            <h3>➕ নতুন প্রোডাক্ট যোগ করুন</h3>
+            <h3>➕ নতুন প্রোডাক্ট যোগ</h3>
             <div class="admin-form">
-                <div>
-                    <label>পণ্যের নাম</label>
-                    <input type="text" id="p-name" placeholder="যেমন: কাজু বাদাম (500g)">
-                </div>
-                <div>
-                    <label>ক্যাটাগরি</label>
-                    <select id="p-cat">
-                        <option value="Dry Fruits">Dry Fruits</option>
-                        <option value="Spices">Spices</option>
-                    </select>
-                </div>
-                <div>
-                    <label>দাম (₹)</label>
-                    <input type="number" id="p-price" placeholder="450">
-                </div>
-                <div>
-                    
+                <div><label>নাম</label><input type="text" id="p-name"></div>
+                <div><label>ক্যাটাগরি</label><select id="p-cat"><option value="Dry Fruits">Dry Fruits</option><option value="Spices">Spices</option></select></div>
+                <div><label>দাম (₹)</label><input type="number" id="p-price"></div>
+                <div><label>স্টক</label><input type="number" id="p-stock"></div>
+                <div><label>আইকন</label><input type="text" id="p-icon" value="🥜"></div>
+                <button class="btn btn-success" onclick="addProduct()">Add Product</button>
+            </div>
+        </div>
+        <div class="box"><h3>📊 স্টক ও দাম</h3><div style="overflow-x:auto;"><table><thead><tr><th>পণ্য</th><th>ক্যাটাগরি</th><th>দাম</th><th>Stock</th><th>বাদ</th></tr></thead><tbody id="admin-product-list"></tbody></table></div></div>
+        <div class="box"><h3>🧾 অর্ডার তালিকা</h3><div style="overflow-x:auto;"><table><thead><tr><th>ID</th><th>কাস্টমার</th><th>পণ্য</th><th>বিল</th><th>স্ট্যাটাস</th></tr></thead><tbody id="admin-orders-list"></tbody></table></div></div>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
