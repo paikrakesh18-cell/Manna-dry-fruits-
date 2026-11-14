@@ -234,4 +234,78 @@ function renderAdmin() {
     pList.innerHTML = products.map(function(p) {
         return '<tr>' +
             '<td>' + p.icon + ' ' + p.name + '</td>' +
+                        '<td>' + p.category + '</td>' +
+            '<td><input type="number" class="inline-input" value="' + p.price + '" onchange="editProduct(' + p.id + ', \'price\', this.value)"></td>' +
+            '<td><input type="number" class="inline-input" value="' + p.stock + '" onchange="editProduct(' + p.id + ', \'stock\', this.value)"></td>' +
+            '<td><button class="btn btn-danger" onclick="deleteProduct(' + p.id + ')">Remove</button></td>' +
+        '</tr>';
+    }).join('');
+
+    const oList = document.getElementById('admin-orders-list');
+    oList.innerHTML = orders.map(function(o) {
+        return '<tr>' +
+            '<td><strong>' + o.id + '</strong><br><small>' + o.dateStr + '</small></td>' +
+            '<td>' + o.customer + ' (' + o.phone + ')<br><small>' + o.type + ' - ' + o.extra + '</small></td>' +
+            '<td>' + o.items.map(function(i) { return i.name + ' x' + i.qty; }).join('<br>') + '</td>' +
+            '<td>₹' + o.total + '</td>' +
+            '<td style="color:' + (o.status === 'Cancelled' ? 'red' : 'green') + '; font-weight:bold;">' + o.status + '</td>' +
+        '</tr>';
+    }).join('');
+}
+
+function addProduct() {
+    const name = document.getElementById('p-name').value.trim();
+    const category = document.getElementById('p-cat').value;
+    const price = Number(document.getElementById('p-price').value);
+    const stock = Number(document.getElementById('p-stock').value);
+    const icon = document.getElementById('p-icon').value || '📦';
+
+    if (!name || price <= 0) {
+        alert("সঠিক নাম ও দাম দিন।");
+        return;
+    }
+
+    products.push({ id: Date.now(), name: name, category: category, price: price, stock: stock, icon: icon });
+    saveData();
+    renderAdmin();
+    document.getElementById('p-name').value = '';
+    document.getElementById('p-price').value = '';
+    document.getElementById('p-stock').value = '';
+    alert("নতুন প্রোডাক্ট যোগ হয়েছে!");
+}
+
+function editProduct(id, field, val) {
+    const p = products.find(function(prod) { return prod.id === id; });
+    if (p) {
+        p[field] = Number(val);
+        saveData();
+        alert("আপডেট সফল হয়েছে!");
+    }
+}
+
+function deleteProduct(id) {
+    if (!confirm("প্রোডাক্টটি ডিলিট করতে চান?")) return;
+    products = products.filter(function(p) { return p.id !== id; });
+    saveData();
+    renderAdmin();
+}
+
+function updateOffer() {
+    offerText = document.getElementById('new-offer-input').value;
+    saveData();
+    renderAll();
+    alert("অফার ব্যানার আপডেট হয়েছে!");
+}
+
+function renderAll() {
+    renderShop();
+    renderCart();
+    renderCustomerOrders();
+    renderAdmin();
+}
+
+window.onload = function() {
+    renderAll();
+};
+
                                          
